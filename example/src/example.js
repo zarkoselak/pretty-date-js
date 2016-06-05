@@ -1,6 +1,7 @@
 'use strict';
 
-var prettyDate = require('../lib/index.js');
+var prettyDate = require('../../lib/index.js');
+var date = "2016-06-05T16:00:00";
 
 var options = {
 	lang: {
@@ -12,8 +13,8 @@ var options = {
 		years: ['year', 'years'],
 		misc: ['ago', 'Invalid input, please check formating']
 	}
-}
+};
 
-var myDate = prettyDate("2012-03-25", options);
+var myDate = prettyDate(date, options);
 
-document.querySelector(".pretty-date").innerHTML = myDate.value + myDate.lang;
+document.querySelector(".pretty-date").innerHTML = myDate.value + ' ' + myDate.lang + ' ago';

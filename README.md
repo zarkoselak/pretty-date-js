@@ -76,19 +76,7 @@ This is default options object
 	}
 }
 ```
-You can override it with your language 
-
-```javasript
-var options = {
-    lang: {
-        seconds: ["upravo", "sekundi"], 
-        minutes: ["minutu", "minute"],
-        hours: ["sat", "sati"]
-        ...
-        misc: ["prije"]
-}
-``` 
-To get outputs like this:
+You can override it with your language to get output like this:
 
 > EN 1 hour ago <br>
 > HR prije 1 sat
@@ -101,6 +89,12 @@ Enter [example folder](https://github.com/zarkoselak/pretty-date-js/tree/master/
 For development server run `npm run start` and open<br>
 [http://localhost:8080/webpack-dev-server/](http://localhost:8080/webpack-dev-server/) <br>
 in your browser or just run `npm run build` for builing example bundle.
+
+To change time in example just update data variable<br>
+`var date = "2016-06-05T16:00:00";`
+
+# [![Example](example/media/example.png)](http://zarkoselak.github.io/pretty-date-js/)
+
 
 ## Demo
 Please try [live demo](http://zarkoselak.github.io/pretty-date-js/) 

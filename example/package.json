@@ -2,11 +2,12 @@
   "name": "example",
   "version": "1.0.0",
   "description": "Simple example of pretty date js module",
-    "scripts": {
-      "build": "webpack",
-      "start": "webpack-dev-server"
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server"
   },
   "devDependencies": {
+    "html-webpack-plugin": "^2.19.0",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   }

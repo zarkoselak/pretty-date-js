@@ -3,4 +3,5 @@
 
 #Example
 example/node_modules
-example/bundle.js
+!example/dist/.gitkeep
+example/dist/**
