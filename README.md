@@ -10,9 +10,14 @@ after module is installed require it in your projects</br>
 then just pass date in valid time format 
 
 `var myPrettyDate = pretty("2012-03-25", options);`
-> Object { value: 4, lang: "years" }
+```javascript
+{ 
+	value: 4, 
+	lang: "years" 
+}
+```
 
-####### Options 
+###### Options 
 
 Use options to override default ENG language settings in module
 
@@ -44,7 +49,7 @@ var options = {
 ``` 
 To get outputs like this:
 
-> EN 1 hour ago
+> EN 1 hour ago <br>
 > HR prije 1 sat
 
  
@@ -57,4 +62,4 @@ For development server run `npm run start` and open<br>
 in your browser or just run `npm run build` for builing example bundle.
 
 #### Live Demo
-Please try live demo 
+Please try [live demo](http://zarkoselak.github.io/pretty-date-js/) 
