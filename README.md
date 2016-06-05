@@ -26,6 +26,7 @@ pretty("Wed Mar 25 2015 01:00:00 GMT+0100 (W. Europe Standard Time)",options);
 ```
 > "1 year ago"
 
+
 ###### ISO 8601
 
 ```javascript
@@ -33,20 +34,24 @@ pretty("2015-03-25", options);
 ```
 > "1 year ago"
 
+
 ###### Long Dates
 ```javascript
 pretty("JANUARY, 25, 2015", options);
 ```
 > "1 year ago"
 
-##### Short Dates
+
+###### Short Dates
 ```javascript
 pretty("03/25/2015", options);
 ```
 > "1 year ago"
 
 
+
 If you are not familiar with date formats please read more [here](http://www.w3schools.com/js/js_date_formats.asp)
+
 
 ##### Options 
 
