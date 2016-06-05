@@ -1,6 +1,11 @@
 # pretty-date-js :hourglass:
 
-## How to use 
+- [How to use](#usage)
+- [Run example](#example)
+- [Live Demo](#demo)
+
+
+## Usage
 
 To use pretty-date-js first install it from npm `npm install pretty-date-js`<br>
 
@@ -89,7 +94,7 @@ To get outputs like this:
 > HR prije 1 sat
 
  
-### Run example
+## Example
 
 Enter [example folder](https://github.com/zarkoselak/pretty-date-js/tree/master/example) and run `npm install` to install webpack and webpack-dev-server
 
@@ -97,5 +102,5 @@ For development server run `npm run start` and open<br>
 [http://localhost:8080/webpack-dev-server/](http://localhost:8080/webpack-dev-server/) <br>
 in your browser or just run `npm run build` for builing example bundle.
 
-### Live Demo
+## Demo
 Please try [live demo](http://zarkoselak.github.io/pretty-date-js/) 
