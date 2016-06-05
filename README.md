@@ -44,9 +44,9 @@ pretty("JANUARY, 25, 2015", options);
 
 ###### Short Dates
 ```javascript
-pretty("03/25/2015", options);
+pretty("03/25/2016", options);
 ```
-> "1 year ago"
+> "2 months ago"
 
 
 

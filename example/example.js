@@ -10,7 +10,7 @@ var options = {
 		days: ['day', 'days'],
 		months: ['month', 'months'],
 		years: ['year', 'years'],
-		misc: ['ago']
+		misc: ['ago', 'Invalid input, please check formating']
 	}
 }
 
