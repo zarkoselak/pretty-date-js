@@ -1,14 +1,13 @@
-# pretty-date-js
+# pretty-date-js :hourglass:
 
 #### How to use 
 
-To use pretty-date-js first install it from npm `npm install pretty-date-js`
+To use pretty-date-js first install it from npm `npm install pretty-date-js`<br>
 
-after module is installed require it in your projects</br>
+after module is installed require it in your project</br>
 `var pretty = require('pretty-date-js');`
 
-then just pass date in valid time format 
-
+then just pass date in valid time format <br> 
 `var myPrettyDate = pretty("2012-03-25", options);`
 ```javascript
 { 
@@ -16,6 +15,7 @@ then just pass date in valid time format
 	lang: "years" 
 }
 ```
+
 ##### Date 
 
 For date input use valid date format or timestamp e.g.
