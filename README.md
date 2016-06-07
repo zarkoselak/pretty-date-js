@@ -1,4 +1,4 @@
-# pretty-date-js :hourglass:
+# pretty-date-js :hourglass: [![npm version](https://badge.fury.io/js/pretty-date-js.svg)](https://badge.fury.io/js/pretty-date-js)
 
 - [How to use](#usage)
 - [Run example](#example)
