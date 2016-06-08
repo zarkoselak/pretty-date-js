@@ -5,3 +5,5 @@
 example/node_modules
 !example/dist/.gitkeep
 example/dist/**
+
+npm-debug.log
