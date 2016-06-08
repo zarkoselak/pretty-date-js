@@ -16,9 +16,14 @@ var prettyDate = (function() {
     return obj1;
   }
 
+  function langHelper(value, name, lang) {
+    return value > 1 ? lang[name] : lang[name];
+  }
+
   function prettyDate(dateParam, options) {
     var date = new Date(dateParam).getTime();
     var defaults = {
+      long: false,
       lang: {
         seconds: ['just now', 'seconds'],
         minutes: ['minute', 'minutes'],
@@ -50,27 +55,27 @@ var prettyDate = (function() {
     var time = [
       {
         value: years,
-        lang: options.lang.years
+        lang: langHelper(years, 'years', options.lang)
       },
       {
         value: months % 30,
-        lang: options.lang.months
+        lang: langHelper(months, 'months', options.lang)
       },
       {
         value: days % 24,
-        lang: options.lang.days
+        lang: langHelper(days, 'days', options.lang)
       },
       {
         value: hours % 60,
-        lang: options.lang.hours
+        lang: langHelper(hours, 'hours', options.lang)
       },
       {
         value: minutes % 60,
-        lang: options.lang.minutes 
+        lang: langHelper(minutes, 'minutes', options.lang) 
       },
       {
         value: seconds % 60,
-        lang: options.lang.seconds
+        lang: langHelper(seconds, 'seconds', options.lang)
       }
     ];
 
@@ -79,15 +84,20 @@ var prettyDate = (function() {
 
   function datePrettify (time, options) {
     var data;
+
     for (var i = 0; i < time.length; i++) {
       if (!!time[i].value) {
-        data = { value: time[i].value, lang: time[i].value > 1 ? time[i].lang[1]: time[i].lang[0] , misc: options.lang.misc[0]};
-        break;
+        data = { 
+          value: time[i].value, 
+          lang: time[i].value > 1 ? time[i].lang[1]: time[i].lang[0] , 
+          misc: options.lang.misc[0]
+        };
+        break;          
       } 
     }
 
     if (!!!data)
-      data = { value: '', lang: options.lang.seconds[0]};
+      data = { value: '', lang: '', misc: options.lang.misc[1]};
 
     return data;
   }

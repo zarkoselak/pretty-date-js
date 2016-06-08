@@ -4,6 +4,7 @@ var prettyDate = require('../../index.js');
 var date = "2016-06-08T07:10:00";
 
 var options = {
+	long: true,
 	lang: {
 		seconds: ['seconde', 'secondes'],
 		minutes: ['minute', 'minutes'],
@@ -16,4 +17,5 @@ var options = {
 };
 
 var myDate = prettyDate(date, options);
+
 document.querySelector(".pretty-date").innerHTML = myDate.misc + ' ' + myDate.value + ' ' + myDate.lang;
