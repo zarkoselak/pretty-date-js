@@ -1,16 +1,19 @@
-'use strict';
-
 var prettyDate = (function() {
+  'use strict';
 
-  function merge(obj1, obj2) {
-    var obj = obj1;
-
-    for (var x in obj2)
-      console.log(x);
-      if (obj2.hasOwnProperty(x))
-        obj[x] = obj2[x];
-
-    return obj;
+  function deepExtend(obj1, obj2) {
+    for (var prop in obj2) {
+      try {
+        if ( obj2[prop].constructor === Object) {
+          obj1[prop] = deepExtend(obj1[prop], obj2[prop])
+        } else if (obj1.hasOwnProperty(prop)) {
+          obj1[prop] = obj2[prop];
+        }
+      } catch(e) {
+        obj1[prop] = obj2[prop];
+      }
+    }
+    return obj1;
   }
 
   function prettyDate(dateParam, options) {
@@ -26,11 +29,12 @@ var prettyDate = (function() {
         misc: ['ago', 'Invalid input, please check formating']
       }
     };
-    
-    if (!!options.lang)
-      options.lang = merge(defaults.lang, options.lang);
+
+    if (!!options && !!options.lang)
+      options = deepExtend(defaults, options);
     else 
       options = defaults;
+
 
     if (!!!date)
       return { value: '', lang: '', misc: options.lang.misc[1]};
@@ -77,7 +81,7 @@ var prettyDate = (function() {
     var data;
     for (var i = 0; i < time.length; i++) {
       if (!!time[i].value) {
-        data = { value: time[i].value, lang: time[i].value > 1 ? time[i].lang[1]: time[i].lang[0] , misc:options.lang.misc[0]};
+        data = { value: time[i].value, lang: time[i].value > 1 ? time[i].lang[1]: time[i].lang[0] , misc: options.lang.misc[0]};
         break;
       } 
     }
