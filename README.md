@@ -98,3 +98,8 @@ To change time in example just update data variable<br>
 
 ## Demo
 Please try [live demo](http://zarkoselak.github.io/pretty-date-js/) 
+
+
+## License
+
+[MIT](https://github.com/zarkoselak/pretty-date-js/blob/master/LICENSE.md)
