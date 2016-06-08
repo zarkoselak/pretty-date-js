@@ -1,6 +1,8 @@
 * {
   box-sizing: border-box; }
 
+.pretty-date {color: #1e6bb8; font-weight: bold;}
+
 body {
   padding: 0;
   margin: 0;
