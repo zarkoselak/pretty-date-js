@@ -1,6 +1,6 @@
 {
   "name": "pretty-date-js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "human-friendly relative date formating lib",
   "main": "index.js",
   "scripts": {
