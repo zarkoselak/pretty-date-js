@@ -2,14 +2,16 @@
 
 var prettyDate = (function() {
 
-   Object.prototype.extend = function(obj) {
-     for (var i in obj) {
-        if (obj.hasOwnProperty(i)) {
-           this[i] = obj[i];
-        }
-     }
-     return this;
-  };
+  function merge(obj1, obj2) {
+    var obj = obj1;
+
+    for (var x in obj2)
+      console.log(x);
+      if (obj2.hasOwnProperty(x))
+        obj[x] = obj2[x];
+
+    return obj;
+  }
 
   function prettyDate(dateParam, options) {
     var date = new Date(dateParam).getTime();
@@ -24,8 +26,11 @@ var prettyDate = (function() {
         misc: ['ago', 'Invalid input, please check formating']
       }
     };
-
-    options = defaults.extend(options);
+    
+    if (!!options.lang)
+      options.lang = merge(defaults.lang, options.lang);
+    else 
+      options = defaults;
 
     if (!!!date)
       return { value: '', lang: '', misc: options.lang.misc[1]};
