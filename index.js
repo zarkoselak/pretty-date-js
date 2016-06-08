@@ -2,15 +2,20 @@
 
 var prettyDate = (function() {
 
+   Object.prototype.extend = function(obj) {
+     for (var i in obj) {
+        if (obj.hasOwnProperty(i)) {
+           this[i] = obj[i];
+        }
+     }
+     return this;
+  };
+
   function prettyDate(dateParam, options) {
     var date = new Date(dateParam).getTime();
-
-    if (!!!date)
-      return { value: '', lang: options.lang.misc[1]};
-
     var defaults = {
       lang: {
-        seconds: ['second', 'seconds'],
+        seconds: ['just now', 'seconds'],
         minutes: ['minute', 'minutes'],
         hours: ['hour', 'hours'],
         days: ['day', 'days'],
@@ -19,6 +24,11 @@ var prettyDate = (function() {
         misc: ['ago', 'Invalid input, please check formating']
       }
     };
+
+    options = defaults.extend(options);
+
+    if (!!!date)
+      return { value: '', lang: '', misc: options.lang.misc[1]};
 
     var ms      = Date.now() - date;
     var seconds = Math.floor(ms / 1000);
@@ -55,20 +65,20 @@ var prettyDate = (function() {
       }
     ];
 
-    return datePrettify(time);
+    return datePrettify(time, options);
   }
 
-  function datePrettify (time) {
+  function datePrettify (time, options) {
     var data;
     for (var i = 0; i < time.length; i++) {
       if (!!time[i].value) {
-        data = { value: time[i].value, lang: time[i].value > 1 ? time[i].lang[1]: time[i].lang[0] };
+        data = { value: time[i].value, lang: time[i].value > 1 ? time[i].lang[1]: time[i].lang[0] , misc:options.lang.misc[0]};
         break;
       } 
     }
 
     if (!!!data)
-      data = { value: '', lang: 'just now'};
+      data = { value: '', lang: options.lang.seconds[0]};
 
     return data;
   }

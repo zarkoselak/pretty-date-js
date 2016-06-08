@@ -1,19 +1,19 @@
 'use strict';
 
 var prettyDate = require('../../index.js');
-var date = "2016-06-05T16:00:00";
+var date = "2016-06-08T07:10:00";
 
 var options = {
 	lang: {
-		seconds: ['second', 'seconds'],
+		seconds: ['seconde', 'secondes'],
 		minutes: ['minute', 'minutes'],
-		hours: ['hour', 'hours'],
-		days: ['day', 'days'],
-		months: ['month', 'months'],
-		years: ['year', 'years'],
-		misc: ['ago', 'Invalid input, please check formating']
+		hours: ['heure', 'heures'],
+		days: ['journée', 'journées'],
+		months: ['mois', 'mois'],
+		years: ['an', 'années'],
+		misc: ['Il y a', 'Invalid input, please check formating']
 	}
 };
 
 var myDate = prettyDate(date, options);
-document.querySelector(".pretty-date").innerHTML = myDate.value + ' ' + myDate.lang + ' ago';
+document.querySelector(".pretty-date").innerHTML = myDate.misc + ' ' + myDate.value + ' ' + myDate.lang;

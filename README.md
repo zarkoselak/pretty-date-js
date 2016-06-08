@@ -3,6 +3,7 @@
 - [How to use](#usage)
 - [Run example](#example)
 - [Live Demo](#demo)
+- [License](#license)
 
 
 ## Usage
@@ -71,15 +72,15 @@ This is default options object
 		hours: ["hour", "hours"],
 		days: ["day", "days"],
 		months: ["month", "months"],
-		years: ["year", "years"]
-		misc: ["ago"]
+		years: ["year", "years"],
+		misc: ["ago", "Invalid input, please check formating"]
 	}
 }
 ```
 You can override it with your language to get output like this:
 
 > EN 1 hour ago <br>
-> HR prije 1 sat
+> FR Il y a 1 heure
 
  
 ## Example
