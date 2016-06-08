@@ -17,7 +17,7 @@ var prettyDate = (function() {
   }
 
   function langHelper(value, name, lang) {
-    return value > 1 ? lang[name] : lang[name];
+    return value > 1 ? lang[name][1] : lang[name][0];
   }
 
   function prettyDate(dateParam, options) {
@@ -89,7 +89,7 @@ var prettyDate = (function() {
       if (!!time[i].value) {
         data = { 
           value: time[i].value, 
-          lang: time[i].value > 1 ? time[i].lang[1]: time[i].lang[0] , 
+          lang:  time[i].lang , 
           misc: options.lang.misc[0]
         };
         break;          
